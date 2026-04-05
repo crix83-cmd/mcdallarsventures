@@ -414,6 +414,17 @@ app.get('/admin/dashboard', (req, res) => {
   });
 });
 
+// Keep server awake — pings itself every 14 minutes
+setInterval(() => {
+  const https = require('https');
+  https.get('https://mcdallarsventures.onrender.com/health', () => {
+    console.log('🔄 Keep-alive ping sent');
+  }).on('error', () => {});
+}, 14 * 60 * 1000);
+
+// Health check route
+app.get('/health', (req, res) => res.json({ status: 'awake' }));
+
 // ── START SERVER ──────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`\n🛍️  ${CONFIG.BUSINESS_NAME} Server Running`);
