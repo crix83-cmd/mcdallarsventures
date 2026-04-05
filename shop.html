@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – McDallars Ventures</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mc">ℳc</span><span class="logo-rest">Dallars</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-icon" id="cartIcon" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>Our Shop</h1>
+    <p>Everything on Sales — browse our full collection</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Shop</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SHOP SECTION ===== -->
+<section class="shop-section">
+  <div class="shop-container">
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" id="filterBar">
+      <div class="filter-left">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Search products..."/>
+          <button class="search-clear" id="searchClear" aria-label="Clear"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="filter-buttons" id="filterBtns">
+          <button class="filter-btn active" data-cat="all">All</button>
+          <button class="filter-btn" data-cat="electronics"><i class="fas fa-tv"></i> Electronics</button>
+          <button class="filter-btn" data-cat="home"><i class="fas fa-couch"></i> Home</button>
+          <button class="filter-btn" data-cat="fashion"><i class="fas fa-tshirt"></i> Fashion</button>
+          <button class="filter-btn" data-cat="food"><i class="fas fa-shopping-basket"></i> Food</button>
+        </div>
+      </div>
+      <div class="filter-right">
+        <div class="sort-wrap">
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="default">Default</option>
+            <option value="price-asc">Price ↑</option>
+            <option value="price-desc">Price ↓</option>
+            <option value="name-asc">Name A–Z</option>
+          </select>
+        </div>
+        <span class="results-count"><span id="resultCount">0</span> products</span>
+      </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <div class="products-grid shop-grid" id="shopGrid"></div>
+
+    <!-- LOAD MORE -->
+    <div class="load-more-wrap" id="loadMoreWrap">
+      <button class="btn-outline-dark" id="loadMoreBtn"><i class="fas fa-plus"></i> Load More Products</button>
+    </div>
+
+    <!-- NO RESULTS -->
+    <div class="no-results" id="noResults" style="display:none;">
+      <i class="fas fa-search"></i>
+      <h3>No products found</h3>
+      <p>Try a different search term or category</p>
+      <button class="btn-primary" onclick="clearSearch()">Clear Search</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CHECKOUT SECTION ===== -->
+<section class="checkout-section" id="checkout">
+  <div class="checkout-wrap">
+    <div class="checkout-header">
+      <h2><i class="fas fa-lock"></i> Secure Checkout</h2>
+      <p>Fill in your details and we'll deliver to your door</p>
+    </div>
+    <div class="checkout-body">
+
+      <!-- ORDER SUMMARY -->
+      <div class="checkout-summary-col">
+        <div class="summary-card">
+          <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+          <div class="summary-items-list" id="summaryItems">
+            <p class="empty-summary"><i class="fas fa-shopping-bag"></i><br>Your cart is empty.<br><a href="#">Add some products!</a></p>
+          </div>
+          <div class="summary-totals">
+            <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">GHS 0.00</span></div>
+            <div class="summary-row"><span>Delivery</span><span class="delivery-tag">Calculated at delivery</span></div>
+            <div class="summary-row total-row"><strong>Total</strong><strong id="summaryTotal">GHS 0.00</strong></div>
+          </div>
+          <div class="trust-strip">
+            <span><i class="fas fa-shield-alt"></i> Secure</span>
+            <span><i class="fas fa-undo"></i> Easy Returns</span>
+            <span><i class="fas fa-truck"></i> Fast Delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKOUT FORM -->
+      <div class="checkout-form-col">
+        <div class="checkout-form-card">
+          <h3><i class="fas fa-user-check"></i> Your Details</h3>
+          <form id="checkoutForm" class="checkout-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custName"><i class="fas fa-user"></i> Full Name *</label>
+                <input type="text" id="custName" placeholder="eg. Abena Tiwaa" required/>
+                <span class="field-err" id="errName"></span>
+              </div>
+              <div class="form-group">
+                <label for="custPhone"><i class="fas fa-phone"></i> Phone Number *</label>
+                <input type="tel" id="custPhone" placeholder="+233 XXX XXX XXX" required/>
+                <span class="field-err" id="errPhone"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="custAddress"><i class="fas fa-map-marker-alt"></i> Delivery Address *</label>
+              <textarea id="custAddress" placeholder="Street, Town, Region — be as specific as possible" rows="3" required></textarea>
+              <span class="field-err" id="errAddress"></span>
+            </div>
+            <div class="form-group">
+              <label for="custNotes"><i class="fas fa-sticky-note"></i> Additional Notes</label>
+              <textarea id="custNotes" placeholder="Landmark, special instructions, preferred delivery time..." rows="2"></textarea>
+            </div>
+            <div class="payment-section">
+              <h4><i class="fas fa-credit-card"></i> Payment Method</h4>
+              <div class="payment-options">
+                <label class="pay-option">
+                  <input type="radio" name="payment" value="pay_on_delivery" checked/>
+                  <span class="pay-card"><i class="fas fa-hand-holding-usd"></i><strong>Pay on Delivery</strong><small>Pay cash when your order arrives</small></span>
+                </label>
+                <label class="pay-option">
+                  <input type="radio" name="payment" value="mobile_money"/>
+                  <span class="pay-card"><i class="fas fa-mobile-alt"></i><strong>Mobile Money</strong><small>MTN, Vodafone, AirtelTigo</small></span>
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary full checkout-btn">
+              <i class="fas fa-lock"></i> Place Order Securely
+            </button>
+            <p class="form-note"><i class="fas fa-shield-alt"></i> Your information is protected and never shared.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORDER SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-box success-modal">
+    <div class="modal-icon anim-pop">🎉</div>
+    <h2>Order Placed!</h2>
+    <p id="orderConfirmMsg">Thank you! Your order has been received. We'll contact you shortly.</p>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="closeOrderModal()">Continue Shopping</button>
+      <a href="contact.html" class="btn-outline-dark">Need Help?</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo footer-logo">
+        <span class="logo-mc">ℳc</span><span class="logo-rest">Dallars</span>
+      </a>
+      <p>Everything on Sales. Komenda, Central Region, Ghana.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/100063797805905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/233244361385" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="shop.html"><i class="fas fa-chevron-right"></i> Shop</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Komenda Junction, Central Region</span></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+233244361385">(+233) 244 361 385</a></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@mcdallars.com">info@mcdallars.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 McDallars Ventures. All rights reserved.</p>
+    <p class="co-builder">Built with ❤️ by <strong><a href="tel:+233593625059">Crix Kay</a></strong></p>
+  </div>
+</footer>
+
+<!-- ===== CART SIDEBAR ===== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+    <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <strong id="cartTotal">GHS 0.00</strong>
+    </div>
+    <a href="#checkout" class="btn-primary full" onclick="hideCartSidebarGlobal()">
+      <i class="fas fa-lock"></i> Proceed to Checkout
+    </a>
+    <a href="#" class="continue-shopping" onclick="hideCartSidebarGlobal(); return false;">← Continue Shopping</a>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-box" id="toastBox"></div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>

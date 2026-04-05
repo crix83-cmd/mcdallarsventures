@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – McDallars Ventures</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mc">ℳc</span><span class="logo-rest">Dallars</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="cart-icon" id="cartIcon" aria-label="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>Get In Touch</h1>
+    <p>We'd love to hear from you — always happy to help</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Contact</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUICK CONTACT STRIP ===== -->
+<div class="quick-contact-strip">
+  <a href="tel:+233244361385" class="qc-item">
+    <i class="fas fa-phone-alt"></i>
+    <span>(+233) 244 361 385</span> 
+  </a>
+  <a href="mailto:info@mcdallars.com" class="qc-item">
+    <i class="fas fa-envelope"></i>
+    <span>info@mcdallars.com</span>
+  </a>
+  <a href="https://wa.me/233244361385" class="qc-item qc-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>Chat on WhatsApp</span>
+  </a>
+</div>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- INFO SIDE -->
+    <div class="contact-info">
+      <div class="info-header">
+        <span class="section-label">Find Us</span>
+        <h2>McDallars Ventures</h2>
+        <p>Your trusted shopping partner in the Central Region. Visit our store or reach out anytime — we're always happy to assist!</p>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text">
+            <strong>Our Location</strong>
+            <span>Komenda Junction, Central Region, Ghana</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon phone-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="info-text">
+            <strong>Phone</strong>
+            <a href="tel:+233244361385">(+233) 244 361 385</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon email-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <strong>Email</strong>
+            <a href="mailto:info@mcdallars.com">info@mcdallars.com</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon clock-icon"><i class="fas fa-clock"></i></div>
+          <div class="info-text">
+            <strong>Business Hours</strong>
+            <span>Mon–Sat: 7:00 AM – 8:00 PM<br/>Sunday: 10:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOCIAL CONNECT -->
+      <div class="social-connect">
+        <p>Connect &amp; follow us:</p>
+        <div class="social-links contact-socials">
+          <a href="#" aria-label="Facebook" class="soc-fb"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/233244361385" aria-label="WhatsApp" class="soc-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="Instagram" class="soc-ig"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok" class="soc-tt"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- WHATSAPP CTA -->
+      <a href="https://wa.me/233244361385?text=Hello%20McDallars%2C%20I%20would%20like%20to%20enquire%20about%20your%20products" class="whatsapp-cta" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <strong>Chat with us on WhatsApp</strong>
+          <small>We reply within minutes during business hours</small>
+        </div>
+        <i class="fas fa-arrow-right wa-arrow"></i>
+      </a>
+    </div>
+
+    <!-- FORM SIDE -->
+    <div class="contact-form-wrap">
+      <h2>Send Us a Message</h2>
+      <p>Fill in the form and we'll get back to you within 24 hours.</p>
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cName"><i class="fas fa-user"></i> Your Name *</label>
+            <input type="text" id="cName" placeholder="eg. Abena Tiwaa" required/>
+            <span class="field-err" id="errCname"></span>
+          </div>
+          <div class="form-group">
+            <label for="cEmail"><i class="fas fa-envelope"></i> Email Address *</label>
+            <input type="email" id="cEmail" placeholder="your@email.com" required/>
+            <span class="field-err" id="errCemail"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cPhone"><i class="fas fa-phone"></i> Phone / WhatsApp</label>
+          <input type="tel" id="cPhone" placeholder="+233 XXX XXX XXX (optional)"/>
+        </div>
+        <div class="form-group">
+          <label for="cSubject"><i class="fas fa-tag"></i> Subject</label>
+          <input type="text" id="cSubject" placeholder="What is this about? eg. Delivery enquiry for Smart TV"/>
+        </div>
+        <div class="form-group">
+          <label for="cMessage"><i class="fas fa-comment-alt"></i> Message *</label>
+          <textarea id="cMessage" placeholder="Write your message here — the more detail, the better we can help!" rows="5" required></textarea>
+          <span class="field-err" id="errCmessage"></span>
+        </div>
+        <button type="submit" class="btn-primary full contact-submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-header">
+      <h3><i class="fas fa-map-marked-alt"></i> Find Our Store</h3>
+      <p>Komenda Junction, Central Region, Ghana</p>
+    </div>
+    <div class="map-placeholder">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15880.748595068!2d-1.479!3d5.066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdfdf!2sKomenda%2C%20Ghana!5e0!3m2!1sen!2sgh!4v1"
+        width="100%" height="400" style="border:0;border-radius:16px;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="McDallars Ventures Location">
+      </iframe>
+      <div class="map-pin-overlay">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>McDallars Ventures<br/>Komenda Junction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal-box success-modal">
+    <div class="modal-icon anim-pop">✉️</div>
+    <h2>Message Sent!</h2>
+    <p>Thank you for reaching out. We'll get back to you within 24 hours. You can also reach us directly by phone or WhatsApp.</p>
+    <div class="modal-actions">
+      <button class="btn-primary" onclick="closeContactModal()">Close</button>
+      <a href="https://wa.me/233244361385" class="btn-outline-dark" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo footer-logo">
+        <span class="logo-mc">ℳc</span><span class="logo-rest">Dallars</span>
+      </a>
+      <p>Everything on Sales. Komenda Junction, Central Region, Ghana.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/100063797805905/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/233244361385" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="shop.html"><i class="fas fa-chevron-right"></i> Shop</a></li>
+        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Komenda Junction, Central Region, Ghana</span></div>
+      <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+233244361385">(+233) 244 361 385</a></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@mcdallars.com">info@mcdallars.com</a></div>
+      <div class="contact-item"><i class="fas fa-clock"></i><span>Mon–Sat: 7am–8pm</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 McDallars Ventures. All rights reserved.</p>
+    <p class="co-builder">Built with ❤️ by <strong><a href="tel:+233593625059">Crix Kay</a></strong></p>
+  </div>
+</footer>
+
+<!-- ===== CART SIDEBAR ===== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+    <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <strong id="cartTotal">GHS 0.00</strong>
+    </div>
+    <a href="shop.html#checkout" class="btn-primary full"><i class="fas fa-lock"></i> Proceed to Checkout</a>
+    <a href="shop.html" class="continue-shopping">← Continue Shopping</a>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-box" id="toastBox"></div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="script.js"></script>
+</body>
+</html>
